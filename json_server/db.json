@@ -1,14 +1,14 @@
 {
   "courses": [
-      {
-          "id": 1,
-          "name":"kiến thức cơ bản",
-          "description":"lorem isplus"
-      },
-      {
-        "id": 2,
-        "name":"kiến thức cơ bản - 2",
-        "description":"lorem isplus - 2"
+    {
+      "name": "Supplying request options",
+      "description": "The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings:",
+      "id": 1
+    },
+    {
+      "name": "Using the Fetch API",
+      "description": "The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.",
+      "id": 2
     }
   ]
 }
