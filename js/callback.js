@@ -30,11 +30,11 @@
 //     }
 // }
 
-var courses = [
-    'JavarScript',
-    'PHP',
-    'Ruby'
-];
+// var courses = [
+//     'JavarScript',
+//     'PHP',
+//     'Ruby'
+// ];
 
 // var htmls = courses.map2(function (course, index,){
 //     return `<h1>${course}</h1>`
@@ -46,44 +46,86 @@ var courses = [
 //     console.log(course, index, array)
 // })
 
+// reduce
+// Array.prototype.reduce2 = function(callback,initialValue){
+//     var arrayLength = this.length;
+//     var i = 0
+//     if (arguments.length < 2) {
+//         i = 1;
+//         initialValue = this[0]
+//     }
+//     for( ; i < arrayLength ; i++ ){
+//         initialValue = callback(initialValue,this[i],i,this)
+//     }
+//     return initialValue;
+// }
+// var courses2 = [
+//     {
+//         id: 1,
+//         name: 'php',        
+//         coin: 100
+//     },
+//     {
+//         id: 2,
+//         name: 'C#',        
+//         coin: 0
+//     },
+//     {
+//         id: 3,
+//         name: 'Java',        
+//         coin: 0
+//     },
+//     {
+//         id: 4,
+//         name: 'javaScript',        
+//         coin: 300
+//     }
+// ]
+// var totalCoin = courses2.reduce2(function(accumulator, currentValue, currentIndex, originArray){
+//     return accumulator + currentValue.coin
+// })
+// console.log(totalCoin)
 
-Array.prototype.reduce2 = function(callback,initialValue){
-    var arrayLength = this.length;
-    var i = 0
-    if (arguments.length < 2) {
-        i = 1;
-        initialValue = this[0]
+// filter
+
+// Array.prototype.filter2 = function (callback,thisArg){
+//     var output = [];
+//     for (var index in this){
+//        if (this.hasOwnProperty(index)){
+           
+//           var result = callback(this[index],index,this);
+//           if(result){
+//               output.push(this[index])
+//           }
+//        }
+//     }
+    
+//     return output
+// }
+// var freeCourses = courses2.filter2(function(course){
+//     return course.coin == 100;
+// }) 
+// console.log(freeCourses);
+
+
+// CLASSES
+// - Thay thế cho contructor function
+// - Giúp dễ nhìn hơn.
+
+class Course {
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
     }
-    for( ; i < arrayLength ; i++ ){
-        initialValue = callback(initialValue,this[i],i,this)
+    getName(){
+        return this.name;
     }
-    return initialValue;
+    getPrice(){
+        return this.price;
+    }
 }
-var courses2 = [
-    {
-        id: 1,
-        name: 'php',        
-        coin: 100
-    },
-    {
-        id: 2,
-        name: 'C#',        
-        coin: 100
-    },
-    {
-        id: 3,
-        name: 'Java',        
-        coin: 100
-    },
-    {
-        id: 4,
-        name: 'javaScript',        
-        coin: 100
-    }
-]
 
-
-var totalCoin = courses2.reduce2(function(accumulator, currentValue, currentIndex, originArray){
-    return accumulator + currentValue.coin
-})
-console.log(totalCoin)
+const phpCourse = new Course('php', 1000);
+const jsCourse = new Course('JavaScript', 2000);
+console.log(phpCourse.getName());
+console.log(jsCourse.getPrice());
